@@ -153,7 +153,4 @@ https://yourusername.github.io/problem_15_wumpus_world/
 
 ---
 
-## 📜 License
 
-MIT License | Educational Use  
-Built with 💙 for AI Education
