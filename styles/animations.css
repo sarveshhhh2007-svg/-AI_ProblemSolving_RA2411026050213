@@ -1,0 +1,33 @@
+/* General Animations */
+
+.glow-effect {
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.2); }
+  100% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.6); }
+}
+
+.typewriter-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Add custom classes that will be toggled by JS */
+.highlight-deduction {
+  animation: flash-text 0.5s ease-in-out;
+  color: var(--neon-cyan) !important;
+}
+
+@keyframes flash-text {
+  0% { text-shadow: 0 0 0px var(--neon-cyan); }
+  50% { text-shadow: 0 0 10px var(--neon-cyan); }
+  100% { text-shadow: 0 0 0px var(--neon-cyan); }
+}

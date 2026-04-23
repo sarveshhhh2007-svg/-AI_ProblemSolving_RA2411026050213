@@ -1,0 +1,93 @@
+:root {
+  /* Primary */
+  --neon-cyan: #00F0FF;
+  --electric-blue: #0080FF;
+  
+  /* Status Colors */
+  --safe-green: #39FF14;
+  --danger-red: #FF0040;
+  --warning-amber: #FFB000;
+  --unknown-grey: #808080;
+  
+  /* Percepts */
+  --breeze-cyan: #00D9FF;
+  --stench-lime: #CCFF00;
+  
+  /* Background */
+  --space-black: #0A0E1A;
+  --panel-dark: rgba(26, 31, 46, 0.85);
+  
+  /* Accents */
+  --chrome: linear-gradient(135deg, #C0C0C0, #E8E8E8);
+  --hologram-blue: rgba(0,240,255,0.3);
+
+  /* Fonts */
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--space-black);
+  color: white;
+  overflow: hidden; /* Prevent scrolling, 3D scene covers full screen */
+  user-select: none;
+}
+
+#app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Glassmorphism Utility */
+.glass-morphism {
+  background: var(--panel-dark);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  z-index: 10;
+  text-align: center;
+  border-bottom: 2px solid var(--neon-cyan);
+}
+
+.top-bar h1 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.top-bar .subtitle {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  color: var(--warning-amber);
+  margin-top: 5px;
+  letter-spacing: 4px;
+}

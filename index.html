@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wumpus World AI Navigator</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/panels.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    
+    <!-- External Libraries -->
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div id="app-container">
+        <!-- 3D Canvas Container -->
+        <div id="canvas-container"></div>
+        
+        <!-- UI Overlay -->
+        <header class="top-bar glass-morphism">
+            <h1>🤖 WUMPUS WORLD AI NAVIGATOR</h1>
+            <div class="subtitle">[NEXUS-7 EXPLORER SYSTEM]</div>
+        </header>
+
+        <!-- Left Panel: Input -->
+        <div class="input-panel glass-morphism panel">
+            <h3>Grid Percepts Configuration</h3>
+            <div class="grid-controls" id="grid-controls">
+                <!-- Dropdowns will be populated by JS -->
+            </div>
+            
+            <div class="control-buttons">
+                <button id="btn-analyze" class="analyze-btn glow-effect">
+                    🔍 RUN INFERENCE ENGINE
+                </button>
+                <button id="btn-reset" class="reset-btn">
+                    🔄 RESET GRID
+                </button>
+            </div>
+            
+            <div class="legend">
+                <h4>Percept Legend</h4>
+                <div class="legend-item"><span class="icon safe">🟢</span> Safe - No hazards</div>
+                <div class="legend-item"><span class="icon breeze">💨</span> Breeze - Pit nearby</div>
+                <div class="legend-item"><span class="icon stench">🦨</span> Stench - Wumpus nearby</div>
+                <div class="legend-item"><span class="icon unknown">❓</span> Unknown - Not explored</div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Output -->
+        <div class="output-panel glass-morphism panel">
+            <h3>Inference Results</h3>
+            
+            <div class="results-section">
+                <ul class="inference-list" id="inference-results">
+                    <li class="placeholder-text">Awaiting input data...</li>
+                </ul>
+            </div>
+            
+            <div class="path-section">
+                <h4>Safe Path:</h4>
+                <p class="path-display typewriter-effect" id="safe-path-display">
+                    --
+                </p>
+            </div>
+            
+            <div class="reasoning-log">
+                <h4>Detailed Reasoning:</h4>
+                <div class="log-entries terminal-style" id="reasoning-log">
+                    <div>[System Ready] Awaiting percepts...</div>
+                </div>
+            </div>
+            
+            <button id="btn-export" class="export-btn">📄 Export Report</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Utility / Coordination -->
+    <script src="src/utils/coordinator.js"></script>
+    <script src="src/utils/audio.js"></script>
+    
+    <!-- AI Engine -->
+    <script src="src/ai/knowledgeBase.js"></script>
+    <script src="src/ai/inferenceEngine.js"></script>
+    <script src="src/ai/pathfinder.js"></script>
+    <script src="src/ai/formatter.js"></script>
+    
+    <!-- 3D Environment -->
+    <script src="src/3d/lighting.js"></script>
+    <script src="src/3d/particles.js"></script>
+    <script src="src/3d/cellEffects.js"></script>
+    <script src="src/3d/grid.js"></script>
+    <script src="src/3d/robotAnimations.js"></script>
+    <script src="src/3d/robot.js"></script>
+    
+    <!-- UI Controllers -->
+    <script src="src/ui/inputPanel.js"></script>
+    <script src="src/ui/outputPanel.js"></script>
+    <script src="src/ui/cameraControls.js"></script>
+    
+    <!-- Main Entry -->
+    <script src="src/main.js"></script>
+</body>
+</html>
