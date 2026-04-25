@@ -100,34 +100,9 @@ Safe Path: (1,1) → (2,1) → (2,2) → Goal
 
 ---
 
-## 🚀 Execution Steps
-
-### Local Development
-```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/problem_15_wumpus_world.git
-cd problem_15_wumpus_world
-
-# 2. Start local server
-python -m http.server 8000
-
-# 3. Open in browser
-http://localhost:8000
-```
-
-### GitHub Pages Deployment
-```bash
-# 1. Push to GitHub
-git add .
-git commit -m "🚀 Deploy Wumpus World Navigator"
-git push origin main
-
-# 2. Enable GitHub Pages
-# Settings → Pages → Source: main branch → Save
 
 # 3. Access live site
-https://yourusername.github.io/problem_15_wumpus_world/
-```
+https://sarveshhhh2007-svg.github.io/-AI_ProblemSolving_RA2411026050213/
 
 ---
 
